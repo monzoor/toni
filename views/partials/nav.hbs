@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+   <div class="container-fluid">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <a href="/ticket">
+               <img src="{{filerev 'img/tonic.png'}}" class="navbar-brand">
+            </a>
+            <button type="button" class="navbar-toggle collapsed">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+         </div>
+         <div class="navbar-collapse collapse">
+            <ul class="nav-left nav navbar-nav">
+               <li role="presentation" class=""><a href="/ticket">Tickets</a></li>
+               <li role="presentation" class=""><a href="#" role="button">FAQ</a></li>
+               <li class="dropdown">
+                  <a id="Callbacks" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                     <span>Callbacks</span><span class="caret"></span>
+                  </a>
+                  <ul role="menu" class="dropdown-menu" aria-labelledby="Callbacks">
+                     <li role="presentation" class=""><a href="/callback" role="menuitem" tabindex="-1">Callback</a></li>
+                     <li role="presentation" class=""><a href="/tonicadvanced" role="menuitem" tabindex="-1">Tonic Advanced</a></li>
+                     <li role="presentation" class=""><a href="/tonicpremium" role="menuitem" tabindex="-1">Tonic Premium</a></li>
+                  </ul>
+               </li>
+               <li role="presentation" class=""><a href="/dashboard">Latest News</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown">
+                  <a id="User" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                     <span>
+                        <i class="fa fa-user fa-fw"></i>Nayeem
+                     </span>
+                     <span class="caret"></span>
+                  </a>
+                  <ul role="menu" class="dropdown-menu" aria-labelledby="User">
+                     <li role="presentation" class=""><a href="/ticket" role="menuitem" tabindex="-1">User Profile</a></li>
+                     <li role="presentation" class=""><a href="/" role="menuitem" tabindex="-1">Logout</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</nav>

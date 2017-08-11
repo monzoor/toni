@@ -8,11 +8,11 @@
 		<link rel="stylesheet" href="{{filerev '/css/style.css'}}">
    </head>
    <body>
-      	<div class="container">
-	   		<div class="row">
-			    {{{body}}}
-			</div>
-		</div>
+   		{{#if Tonic.loggedIn}}
+			{{> nav}}
+   		{{/if}}
+   		{{{body}}}
+      	
 		<script src="{{filerev '/js/main.js'}}"></script>
 		{{#each scripts}}
 	    	<script src="{{filerev this}}"></script>

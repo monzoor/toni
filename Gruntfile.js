@@ -72,6 +72,7 @@ module.exports = function (grunt) {
         src: [
           'bower_components/jquery/dist/jquery.js',
           'bower_components/validate/validate.js',
+          'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
           'assets/js/*.js'
         ],
         dest: './public/js/main.js'

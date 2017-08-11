@@ -29,6 +29,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, (app.locals.ENV_DEVELOPMENT ? 'public' : 'dist'))));
 
+app.use(function (req, res, next) {
+  res.locals.Tonic = {
+    loggedIn: (req.user) ? true : false,
+  };
+  next();
+});
+
 // Routes
 require("./lib/route-handlers")(app);
 
