@@ -1,0 +1,27 @@
+.form-control {
+  font-family: QS_lt;
+}
+
+
+.form-control {
+  font-family: QS_md;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.form-control.lg {
+  height: 50px;
+}
+
+.form-control-character-counter {
+  font-size: 11;
+  height: 11px;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  right: 0;
+  margin-right: 15px;
+  color: #333 !important;
+  line-height: 11px;
+}

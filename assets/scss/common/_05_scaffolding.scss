@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+// Compass library
+@import "compass/css3";
+
+body {
+  /* This should be the only place we set the font size in
+   * pixels. Every other font size should be relative to 
+   * this (use 'em' units) */
+  font-family: $font-family-sans-serif;
+  background: url('/img/hexellence.png') repeat;
+  // background-color: red;
+
+  
+  // To facilitate consistent footer positioning
+  min-height: 100vh;
+  margin-top: 50px;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+* li {
+  list-style: none;
+}
+
+* ul {
+  margin: 0;
+  padding: 0;
+}
+
+input, a, button, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.norm-group {
+  padding: 7px 0;
+}
+
+.no-title-group-xxs {
+  padding: 23px 0 1px;
+}
+
+.no-title-group-xs {
+  padding: 23px 0 6px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+@media only screen and (max-width: 1200px) {
+  .no-title-group-xss {
+    padding: 10px 0 1px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .no-title-group {
+    padding: 25px 0 1px;
+  }
+}
+
+/* margin styles */
+.no-m-b {
+  margin-bottom: 0;
+}
+.m-t-sm {
+  margin-top: 10px;
+}
+.m-t-lg {
+  margin-top: 20px;
+}
+.m-r-sm {
+  margin-right: 10px;
+}
+
+#Tickets,
+#OtherText {
+  display: none;
+}

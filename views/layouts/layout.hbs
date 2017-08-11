@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+   	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+		<title>Tonic | {{title}}</title>
+		<link rel="stylesheet" href="{{filerev '/css/style.css'}}">
+   </head>
+   <body>
+      	<div class="container">
+	   		<div class="row">
+			    {{{body}}}
+			</div>
+		</div>
+		<script src="{{filerev '/js/main.js'}}"></script>
+		{{#each scripts}}
+	    	<script src="{{filerev this}}"></script>
+	    {{/each}}
+    </body>
+</html>

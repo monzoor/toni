@@ -1,0 +1,49 @@
+.panel-transparent {
+  background: transparent !important;
+  color: #222;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.panel-default {
+  background: #f5f5f5;
+  color: #222;
+  border-color: #f0f0f0;
+}
+.panel-default-outline {
+  background: rgba(245, 245, 245, .55);
+  color: #222;
+  border: 2px #e2e4e5 solid;
+}
+.panel-primary {
+  background: #0097db;
+  color: #fff;
+  border-color: #0097d6;
+}
+.panel-success {
+  background: #00b550;
+  color: #fff;
+  border-color: #00b545;
+}
+.panel-info {
+  background: #87ceeb;
+  color: #fff;
+  border-color: #87cee6;
+}
+.panel-warning {
+  background: #fed100;
+  color: #222;
+  border-color: #fed095;
+}
+.panel-danger {
+  background: #ff5868;
+  color: #fff;
+  border-color: #ff5863;
+}
+.panel h3 {
+  font-family: "QS_bd", sans-serif;
+  margin-top: 0;
+}
+
+.panel.no-p-t .panel-body {
+  padding-top: 0;
+}
