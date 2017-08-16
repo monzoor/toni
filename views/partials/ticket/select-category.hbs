@@ -1,0 +1,6 @@
+{{#each catOptions}}
+	<option value="">Select {{optionName}}</option>
+	{{#each options}}
+		<option value="{{id}}" data-next="{{../nextItem}}" id="{{id}}">{{name}}</option>
+	{{/each}}
+{{/each}}
