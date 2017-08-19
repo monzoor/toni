@@ -25,6 +25,7 @@
             <div class="panel-body">
                <form>
                   <h3>Reason to Call</h3>
+                  <img id="loader" src="{{filerev 'img/DoubleRing.gif'}}" class="none" alt="">
                   <div id="dynamic">
                      <div class="form-group">
                         <label class="control-label">Type</label>
@@ -38,7 +39,7 @@
                      <div id="subCats">
                         <div class="form-group">
                            <label class="control-label">Category</label>
-                           <select id="category" name="category" class="form-control">
+                           <select id="category" name="category" class="form-control" disabled>
                               <option value="">Select Category</option>
                            </select>
                         </div>
@@ -46,7 +47,7 @@
                   </div>
                   <div class="form-group">
                      <label class="control-label">Reason</label>
-                     <select id="subcategory" name="subcategory" class="form-control">
+                     <select id="subcategory" name="subcategory" class="form-control" disabled>
                         <option value="">Select Reason</option>
                      </select>
                   </div>

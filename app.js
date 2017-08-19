@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var exphbs = require('express-handlebars');
 var hbsHelpers = require('./config/hbs-helpers');
+var flash = require('connect-flash');
 
 var app = express();
 app.locals.ENV = process.env.NODE_ENV;
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, (app.locals.ENV_DEVELOPMENT ? 'public' : 'dist'))));
+app.use(flash());
 
 app.use(function (req, res, next) {
   res.locals.Tonic = {
@@ -39,22 +41,7 @@ app.use(function (req, res, next) {
 // Routes
 require("./lib/route-handlers")(app);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+//Handle errors in a different place to avoid making this file to big
+require("./lib/error-handlers")(app);
 
 module.exports = app;

@@ -4,9 +4,13 @@ var _ = require('lodash');
 var axios = require('axios');
 var selectOptions = require('../middleware/ticket-select');
 
-var optionsUrl = 'http://pinion.api.ekhanei.com/v1/config/category'
+
+
+// var optionsUrl = 'http://pinion.api.ekhanei.com/v1/config/category'
 
 router.get('/',selectOptions, function(req, res, next) {
+
+	
 	
 	res.locals.Tonic.loggedIn = true; // Temp need to remove
 
@@ -25,6 +29,7 @@ router.get('/',selectOptions, function(req, res, next) {
 });
 
 router.use('/selectCats',selectOptions, function(req, res, next) {
+
 
 	var selectOpts = req.selectOptions;
 	var finalData = [];

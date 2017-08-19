@@ -3,9 +3,11 @@
 	var data = {},
 		count = 0;
 
+
 	$("#dynamic select").on('change', function (){
 		var currentValue = $(this).val();
 		var currentKey = $(this).attr('name');
+		var $this = $(this)
 
 		if(currentKey === 'type') {
 			count++;
@@ -19,10 +21,12 @@
 
 			if (objKey === 'category' && keyValue === '' ){
 				$('#subcategory').find("option:gt(0)").remove();
+				$("#subcategory").prop('disabled', true);
 			}
 
 			if (objKey === 'type' && keyValue === '' ){
-				$('#subCats select').find("option:gt(0)").remove();
+				$('#subCats select, #subcategory').find("option:gt(0)").remove();
+				$("#dynamic select:not(:first),#subcategory").prop('disabled', true);
 				data = {};
 			}
 			else if (typeof objKey !== 'undefined' && keyValue !== ''){
@@ -34,14 +38,23 @@
 			delete data[Object.keys(data)[1]];
 			count = 0;
 		}
+		var toAppend = $('#'+$(this).find(':selected').data('next'));
 
+		var loader = $('#loader')
+		$(document).ajaxStart(function () {
+			loader.show();
+			toAppend.prop('disabled', true);
+        });
+		$(document).ajaxStop(function () {
+            loader.hide();
+            toAppend.prop('disabled', false);
+        });
 		
 		if (!jQuery.isEmptyObject(data)){
-			toAppend = $('#'+$(this).find(':selected').data('next'));
-
+			
 			$.get('/ticket/selectCats', data)
 			    .success(function(res){ //response
-			    	console.log(res)
+			    	toAppend.prop('disabled', false);
 			    	toAppend.html(res);
 			    })
 			    .error(function(err){ 
