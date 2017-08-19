@@ -3,21 +3,14 @@ var router = express.Router();
 var _ = require('lodash');
 var axios = require('axios');
 var selectOptions = require('../middleware/ticket-select');
-var sdk = require('../sdk/');
+
 
 
 // var optionsUrl = 'http://pinion.api.ekhanei.com/v1/config/category'
 
 router.get('/',selectOptions, function(req, res, next) {
 
-	sdk.rtc.getCategory()
-		.then(function (response){
-			console.log('===final===')
-		})
-		.catch(function (err){
-			console.log('==errr');
-			next(err)
-		})
+	
 	
 	res.locals.Tonic.loggedIn = true; // Temp need to remove
 
@@ -36,16 +29,6 @@ router.get('/',selectOptions, function(req, res, next) {
 });
 
 router.use('/selectCats',selectOptions, function(req, res, next) {
-
-
-
-	
-
-
-
-
-
-
 
 
 	var selectOpts = req.selectOptions;

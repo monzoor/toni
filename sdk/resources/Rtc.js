@@ -11,6 +11,7 @@ var SDKError = require('../SDKError');
 var rtc = function () {
 
   var baseURL = '/api/v1/';
+  // var baseURL = '/v1/config/';
 
   // CODE GENERATION: String to CRC16 and then DECIMAL Value
   var errors = {
@@ -22,27 +23,22 @@ var rtc = function () {
     errors: errors,
 
     getCategory: function (params) {
-      // params = _.merge({
-      //   id: null,
-      //   ip: null
-      // }, params);
-      // console.log('RTC==========',params)
 
       return api.calling({
         service: 'rtc_category',
         method: 'GET',
         url: baseURL + "types",
+        // url: baseURL + "category",
       })
       .then(function (response) {
-        console.log('===RTC====res',response)
         if (response.code === 200) {
           return response.body;
         }
         else if (response.code === 404 || response.code === 422) {
-          throw new SDKError("No Ad Found", errors.NOT_FOUND);
+          throw new SDKError("No RTC category Found", errors.NOT_FOUND);
         }
-        throw new SDKError("Problem to fetch Ad", errors.EXECUTION_FAILED);
-      });
+        throw new SDKError("Problem to fetch RTC category", errors.EXECUTION_FAILED);
+      })
     },
   };
 
